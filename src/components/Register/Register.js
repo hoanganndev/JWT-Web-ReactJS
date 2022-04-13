@@ -1,15 +1,15 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import "./Login.scss";
+import "./Register.scss";
 import marcusLogo from "./marcus.png";
 
-const Login = () => {
+const Register = () => {
     const history = useHistory();
-    const handleCreateNewAccount = () => {
-        history.push("/register");
+    const handleLogin = () => {
+        history.push("/login");
     };
     return (
-        <div className="login-container">
+        <div className="register-container">
             <div className="container">
                 <div className="row px-3 px-sm-0 py-3">
                     <div className="content-left col-12 d-none col-sm-8 d-sm-block ">
@@ -26,10 +26,26 @@ const Login = () => {
                             <img className="marcus-logo" src={marcusLogo} />
                         </div>
                         <div className="form-group">
-                            <lable>Email or Phone:</lable>
+                            <lable>Email:</lable>
                             <input
                                 className="form-control py-2"
-                                placeholder="Email address or phone number"
+                                placeholder="Enter email address "
+                                type="email"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <lable>Phone number:</lable>
+                            <input
+                                className="form-control py-2"
+                                placeholder="Enter phone number"
+                                type="text"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <lable>User name:</lable>
+                            <input
+                                className="form-control py-2"
+                                placeholder="Enter user name"
                                 type="text"
                             />
                         </div>
@@ -37,26 +53,30 @@ const Login = () => {
                             <lable>Password:</lable>
                             <input
                                 className="form-control py-2"
-                                placeholder="Password"
-                                type="password"
+                                placeholder="Enter your assword"
+                                type="text"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <lable>Re-enter password:</lable>
+                            <input
+                                className="form-control py-2"
+                                placeholder="Re-enter your password"
+                                type="text"
                             />
                         </div>
 
-                        <button className="btn btn-primary py-2 login">
-                            Login
+                        <button className="btn btn-primary py-2 register">
+                            Register
                         </button>
-                        <span className="text-center forgot-password">
-                            <a href="#" className="forgot-password">
-                                Forgotten password?
-                            </a>
-                        </span>
+
                         <hr />
                         <div className="text-center">
                             <button
                                 className="btn btn-outline-success create-account"
-                                onClick={() => handleCreateNewAccount()}
+                                onClick={() => handleLogin()}
                             >
-                                Create New Account
+                                Already've an account. Login
                             </button>
                         </div>
                     </div>
@@ -66,4 +86,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
