@@ -2,7 +2,6 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.scss";
 import marcusLogo from "./marcus.png";
-
 const Login = () => {
     const history = useHistory();
     const handleCreateNewAccount = () => {
@@ -17,8 +16,8 @@ const Login = () => {
                             <img className="marcus-logo" src={marcusLogo} />
                         </div>
                         <div className="detail">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit.dolor sit amet consectetur adipisicing elit.
+                            Sometimes people are beautiful. Not in looks. Not in
+                            what they say. Just in what they are.
                         </div>
                     </div>
                     <div className="content-right col-12  col-sm-4 d-flex flex-column gap-3 py-3 px-3 ">
@@ -26,16 +25,28 @@ const Login = () => {
                             <img className="marcus-logo" src={marcusLogo} />
                         </div>
                         <div className="form-group">
-                            <lable>Email or Phone:</lable>
+                            <label
+                                htmlFor="input-email-phone"
+                                className="form-label"
+                            >
+                                Email or Phone:
+                            </label>
                             <input
+                                id="input-email-phone"
                                 className="form-control py-2"
                                 placeholder="Email address or phone number"
                                 type="text"
                             />
                         </div>
                         <div className="form-group">
-                            <lable>Password:</lable>
+                            <label
+                                htmlFor="input-password"
+                                className="form-label"
+                            >
+                                Password:
+                            </label>
                             <input
+                                id="input-password"
                                 className="form-control py-2"
                                 placeholder="Password"
                                 type="password"

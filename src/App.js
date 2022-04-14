@@ -1,7 +1,9 @@
-import Nav from "./components/Navigation/Nav";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ToastContainer } from "react-toastify"; //🔥 Config Toastify
+import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./components/Login/Login";
+import Nav from "./components/Navigation/Nav";
 import Register from "./components/Register/Register";
 function App() {
     return (
@@ -24,6 +26,17 @@ function App() {
                     <Route path="*">404 not found</Route>
                 </Switch>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </Router>
     );
 }
