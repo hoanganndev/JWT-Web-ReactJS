@@ -1,7 +1,7 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
+import { registerNewUser } from "../../services/userServices";
 import marcusLogo from "./marcus.png";
 import "./Register.scss";
 const Register = () => {
@@ -53,19 +53,27 @@ const Register = () => {
             toast.error("😒 Your password is not the same !");
             return false;
         }
-
         return true;
     };
-    const handleRegister = () => {
+    const handleRegister = async () => {
         let check = isValidInputs();
         if (check) {
-            axios.post("http://localhost:8080/api/v1/register", {
-                email,
-                phone,
-                username,
-                password,
-                confirmPassword,
-            });
+            let res = await registerNewUser(email, phone, username, password);
+            if (res && +res.errorCode === 0) {
+                toast.success(res.errorMessage, {
+                    icon: "🤨",
+                });
+                history.push("/login");
+            } else {
+                toast.error(res.errorMessage, {
+                    icon: "🤨",
+                });
+            }
+        }
+    };
+    const handlePressEnter = e => {
+        if (e.charCode === 13 && e.code === "Enter") {
+            handleRegister();
         }
     };
     return (
@@ -178,6 +186,7 @@ const Register = () => {
                                 onChange={e =>
                                     setConfirmPassword(e.target.value)
                                 }
+                                onKeyPress={e => handlePressEnter(e)}
                             />
                         </div>
                         <button
