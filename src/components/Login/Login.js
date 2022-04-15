@@ -1,11 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.scss";
 import marcusLogo from "./marcus.png";
+import { toast } from "react-toastify";
+import { loginUser } from "../../services/userServices";
+
 const Login = () => {
+    const [valueLogin, setValueLogin] = useState("");
+    const [password, setPassword] = useState("");
     const history = useHistory();
     const handleCreateNewAccount = () => {
         history.push("/register");
+    };
+    const dafaultValidInput = {
+        isValidValueLogin: true,
+        isValidPassword: true,
+    };
+    const [objCheckInput, setOpjCheckInput] = useState(dafaultValidInput);
+    const handleLogin = async () => {
+        setOpjCheckInput(dafaultValidInput);
+        if (!valueLogin) {
+            setOpjCheckInput({
+                ...dafaultValidInput,
+                isValidValueLogin: false,
+            });
+            toast.warning("Please enter your email address or phone number !");
+            return;
+        }
+        if (!password) {
+            setOpjCheckInput({
+                ...dafaultValidInput,
+                isValidPassword: false,
+            });
+            toast.warning("Please enter your password !");
+            return;
+        }
+        let res = await loginUser(valueLogin, password);
+        if (res && +res.errorCode === 0) {
+            //🔥 Success
+            let data = {
+                isAuthenticated: true,
+                token: "face tooken",
+            };
+            sessionStorage.setItem("account", JSON.stringify(data));
+            history.push("/users");
+            window.location.reload(); //🔥 This code will reload at users page
+        }
+        if (res && +res.errorCode !== 0) {
+            toast.error(res.errorMessage);
+        }
+    };
+    const handlePressEnter = e => {
+        if (e.charCode === 13 && e.code === "Enter") {
+            handleLogin();
+        }
     };
     return (
         <div className="login-container">
@@ -33,9 +81,15 @@ const Login = () => {
                             </label>
                             <input
                                 id="input-email-phone"
-                                className="form-control py-2"
+                                className={
+                                    objCheckInput.isValidValueLogin
+                                        ? "form-control py-2"
+                                        : "form-control py-2 is-invalid"
+                                }
                                 placeholder="Email address or phone number"
                                 type="text"
+                                value={valueLogin}
+                                onChange={e => setValueLogin(e.target.value)}
                             />
                         </div>
                         <div className="form-group">
@@ -47,13 +101,23 @@ const Login = () => {
                             </label>
                             <input
                                 id="input-password"
-                                className="form-control py-2"
+                                className={
+                                    objCheckInput.isValidPassword
+                                        ? "form-control py-2"
+                                        : "form-control py-2 is-invalid"
+                                }
                                 placeholder="Password"
                                 type="password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                onKeyPress={e => handlePressEnter(e)}
                             />
                         </div>
 
-                        <button className="btn btn-primary py-2 login">
+                        <button
+                            className="btn btn-primary py-2 login"
+                            onClick={() => handleLogin()}
+                        >
                             Login
                         </button>
                         <span className="text-center forgot-password">

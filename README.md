@@ -26,4 +26,10 @@
 
 ---
 
+### Config lodash
+
+> **lodash** `npm i --save-exact lodash@4.17.21`
+
+---
+
 > [HOW TO WRITE README FILE ?](https://ihoctot.com/cach-viet-readme-md)
