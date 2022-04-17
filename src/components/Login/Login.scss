@@ -5,16 +5,26 @@
   .content-left{
     padding-top: 55px;
     .brand{
-      .marcus-logo{
-        height: 90px;
-        padding-left: 30px;
+      h1{
+        color: #3f456c;
+        font-family: math;
+        font-size: 60px;
+        letter-spacing: 5px;
+      }
+      p{
+        letter-spacing: 5px;
+        color: #272858;
+        font-size: 23px;
+
       }
     }
     .detail{
-      font-size: 28px;
+      font-size: 20px;
       font-weight: normal;
-      padding-left: 28px;
-      color: #895b5b;
+      color: #272858;
+      letter-spacing: 5px;
+      line-height: 30px;
+      font-style: italic;
     }
   }
   .content-right{
@@ -22,9 +32,10 @@
     background-color: #fff;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     .brand-mobile{
-      .marcus-logo{
-        height: 60px;
-       
+      h1{
+        color: #3f456c;
+        font-family: math;
+        font-size: 35px;
       }
     }
     .forgot-password{
@@ -43,4 +54,7 @@
     
   }
 
+}
+.form-lable{
+  font-family: system-ui;
 }

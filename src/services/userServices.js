@@ -13,9 +13,12 @@ const loginUser = (valueLogin, password) => {
         password,
     });
 };
-const fetchAllUser = (page, limit) => {
-    return axiosClient.get(`/api/v1/user/read?page=${page}&limit=${limit}`);
+const fetchAllUser = () => {
+    return axiosClient.get("/api/v1/user/read");
 };
+// const fetchAllUser = (page, limit) => {
+//     return axiosClient.get(`/api/v1/user/read?page=${page}&limit=${limit}`);
+// };
 const deleteUser = user => {
     return axiosClient.delete("/api/v1/user/delete", {
         data: { id: user.id },
