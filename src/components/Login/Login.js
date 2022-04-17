@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.scss";
-import marcusLogo from "./marcus.png";
+import cat_gif from "./cat.gif";
 import { toast } from "react-toastify";
 import { loginUser } from "../../services/userServices";
 
@@ -55,22 +55,33 @@ const Login = () => {
             handleLogin();
         }
     };
+    useEffect(() => {
+        let sesstion = sessionStorage.getItem("account");
+        if (sesstion) {
+            history.push("/");
+            window.location.reload();
+        }
+    }, []);
     return (
         <div className="login-container">
             <div className="container">
                 <div className="row px-3 px-sm-0 py-3">
                     <div className="content-left col-12 d-none col-sm-8 d-sm-block ">
                         <div className="brand">
-                            <img className="marcus-logo" src={marcusLogo} />
+                            <h1>Marcus</h1>
+                            <p>Web Developer</p>
                         </div>
                         <div className="detail">
                             Sometimes people are beautiful. Not in looks. Not in
                             what they say. Just in what they are.
                         </div>
+                        <div className="icon text-center">
+                            <img src={cat_gif} alt="" />
+                        </div>
                     </div>
                     <div className="content-right col-12  col-sm-4 d-flex flex-column gap-3 py-3 px-3 ">
                         <div className="brand brand-mobile d-sm-none">
-                            <img className="marcus-logo" src={marcusLogo} />
+                            <h1 className="text-center">Marcus</h1>
                         </div>
                         <div className="form-group">
                             <label
