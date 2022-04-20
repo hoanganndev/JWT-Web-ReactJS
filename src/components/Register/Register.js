@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { registerNewUser } from "../../services/userServices";
-import cat_gif from "./cat.gif";
 import "./Register.scss";
+
 const Register = () => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -88,9 +88,6 @@ const Register = () => {
                         <div className="detail">
                             Sometimes people are beautiful. Not in looks. Not in
                             what they say. Just in what they are.
-                        </div>
-                        <div className="icon text-center">
-                            <img src={cat_gif} alt="" />
                         </div>
                     </div>
                     <div className="content-right col-12  col-sm-4 d-flex flex-column gap-3 py-3 px-3 ">

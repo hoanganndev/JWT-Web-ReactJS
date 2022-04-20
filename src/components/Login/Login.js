@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import "./Login.scss";
-import cat_gif from "./cat.gif";
 import { toast } from "react-toastify";
 import { loginUser } from "../../services/userServices";
+import "./Login.scss";
 
 const Login = () => {
     const [valueLogin, setValueLogin] = useState("");
@@ -74,9 +73,6 @@ const Login = () => {
                         <div className="detail">
                             Sometimes people are beautiful. Not in looks. Not in
                             what they say. Just in what they are.
-                        </div>
-                        <div className="icon text-center">
-                            <img src={cat_gif} alt="" />
                         </div>
                     </div>
                     <div className="content-right col-12  col-sm-4 d-flex flex-column gap-3 py-3 px-3 ">
