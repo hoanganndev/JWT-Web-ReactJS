@@ -113,4 +113,10 @@ SELECT * FROM User LIMIT 5 OFFSET 25;
 
 ---
 
+## Config font awesome v4.7.0
+
+> npm i --save-exact font-awesome@4.7.0
+
+> import 'font-awesome/css/font-awesome.min.css' at file index in reactjs;
+
 ## [How to write readme file ?](https://ihoctot.com/cach-viet-readme-md)

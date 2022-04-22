@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ToastContainer } from "react-toastify"; //🔥 Config Toastify
 import "react-toastify/dist/ReactToastify.css";
