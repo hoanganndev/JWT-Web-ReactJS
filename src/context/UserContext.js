@@ -15,7 +15,7 @@ function UserProvider({ children }) {
         setUser({ ...userData, isLoading: false });
     };
     const logoutContext = () => {
-        // setUser({ ...dataUserDefault, isLoading: false });
+        setUser({ ...dataUserDefault, isLoading: false });
     };
     const fetchUser = async () => {
         //! when the error, will be automatically run to a interceptor axios

@@ -38,7 +38,7 @@ const getUserAccount = () => {
     return axiosClient.get("/api/v1/account");
 };
 const logoutUser = () => {
-    return axiosClient.post("/api/v1/logout");
+    return axiosClient.get("/api/v1/logout");
 };
 
 export {

@@ -1,0 +1,38 @@
+
+.notfound-page-left{
+  .re-direact-homepage>a{
+    letter-spacing: 5px;
+    color: #701038;
+    font-size: 20px;
+    font-family: math;
+    &:hover{
+      color: #309bc5;
+    }
+  }
+.image-not-found{
+  width: 100%;
+  height: 400px;
+  background-image: url('./404-tenlua.gif');
+  background-repeat: no-repeat; 
+  background-position: center center;  
+  background-attachment: fixed;
+}
+  .brand{
+    p{
+      letter-spacing: 5px;
+      color: #701038;
+      font-size: 23px;
+    }
+  }
+}
+.notfound-page-right{
+
+  .detail{
+    font-size: 20px;
+    font-weight: normal;
+    color: #101010;
+    letter-spacing: 5px;
+    line-height: 30px;
+    font-style: italic;
+  }
+}

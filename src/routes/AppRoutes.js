@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Login from "../components/Login/Login";
 import Users from "../components/ManageUsers/Users";
+import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import Register from "../components/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 const AppRoutes = () => {
@@ -23,7 +24,9 @@ const AppRoutes = () => {
                 <Route path="/" exact>
                     home
                 </Route>
-                <Route path="*">404 not found</Route>
+                <Route path="*">
+                    <NotFoundPage />
+                </Route>
             </Switch>
         </>
     );

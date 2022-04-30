@@ -1,18 +1,24 @@
 .register-container{
+  width: 100%;
   min-height: 100vh;
-  background-color: #f0f2f5;
+  background-color: #cadfff;
+  background-image: url('https://images.unsplash.com/photo-1590212151175-e58edd96185b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80');
+  background-repeat: no-repeat; 
+  background-position: center center;  
+  background-size: cover;
+  background-attachment: fixed;
   .content-left{
     padding-top: 55px;
     .brand{
       h1{
-        color: #3f456c;
+        color: #e1edff;
         font-family: math;
         font-size: 60px;
         letter-spacing: 5px;
       }
       p{
         letter-spacing: 5px;
-        color: #272858;
+        color: #ffffff;
         font-size: 23px;
 
       }
@@ -20,15 +26,21 @@
     .detail{
       font-size: 20px;
       font-weight: normal;
-      color: #272858;
+      color: #ffffff;
       letter-spacing: 5px;
       line-height: 30px;
       font-style: italic;
     }
   }
   .content-right{
+    input{
+      border: none;
+    }
     border-radius: 10px;
-    background-color: #fff;
+    background-image: url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=326&q=80');
+    background-repeat: no-repeat; 
+    background-position: center center;  
+    background-size: cover;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     .brand-mobile{
       h1{
@@ -43,6 +55,7 @@
     .register{
       font-size: 20px;
       font-weight: 700;
+      letter-spacing: 2px;
     }
     .forgot-password{
       text-decoration: none;
@@ -50,7 +63,27 @@
         text-decoration: underline;
       }
     }
-    
+    label{
+      color: #ffffff !important;
+    }
+    .btn-register{
+      color: #ffffff;
+      background-color: #02c5ab;
+      &:hover{
+        background-color: transparent;
+       border: 1px solid  #02c5ab;
+       color: #02c5ab;
+      }
+    }
+    .create-account{
+      color: #ffffff;
+      background-color: #25e776;
+      &:hover{
+        background-color: transparent;
+       border: 1px solid  #25e776;
+       color: #25e776;
+      }
+    }
   }
 }
 .form-lable{
