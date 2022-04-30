@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
+import { UserContext } from "../../context/UserContext";
 import { loginUser } from "../../services/userServices";
 import "./Login.scss";
-
 const Login = () => {
+    const { loginContext } = useContext(UserContext);
     const [valueLogin, setValueLogin] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory();
@@ -36,14 +37,19 @@ const Login = () => {
         }
         let res = await loginUser(valueLogin, password);
         if (res && +res.errorCode === 0) {
-            //🔥 Success
+            //! Success
+            let email = res.data.email;
+            let username = res.data.username;
+            let token = res.data.access_token;
+            let groupWithRoles = res.data.groupWithRoles;
             let data = {
-                isAuthenticated: true,
-                token: "face tooken",
+                isAuthenticated: true, //! True when user login sucess
+                token: token,
+                account: { groupWithRoles, email, username },
             };
-            sessionStorage.setItem("account", JSON.stringify(data));
+            localStorage.setItem("jwt", token); //! We can save token in redux or localStorage
+            loginContext(data); //! Set data for method login in context api
             history.push("/users");
-            window.location.reload(); //🔥 This code will reload at users page
         }
         if (res && +res.errorCode !== 0) {
             toast.error(res.errorMessage);
@@ -54,13 +60,7 @@ const Login = () => {
             handleLogin();
         }
     };
-    useEffect(() => {
-        let sesstion = sessionStorage.getItem("account");
-        if (sesstion) {
-            history.push("/");
-            window.location.reload();
-        }
-    }, []);
+
     return (
         <div className="login-container">
             <div className="container">

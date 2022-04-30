@@ -5,7 +5,7 @@ import Users from "../components/ManageUsers/Users";
 import Register from "../components/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 const AppRoutes = () => {
-    //🔥 Face component Projects
+    //! Face component Projects
     const Projects = () => {
         return <span>Projects</span>;
     };

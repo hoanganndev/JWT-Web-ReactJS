@@ -1,13 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 import "font-awesome/css/font-awesome.min.css";
+import React from "react";
+import ReactDOM from "react-dom";
+
+import App from "./App";
+import { UserProvider } from "./context/UserContext"; //! We can use redux to repalce context in this case
+import reportWebVitals from "./reportWebVitals";
+
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <UserProvider>
+            <App />
+        </UserProvider>
     </React.StrictMode>,
     document.getElementById("root")
 );
