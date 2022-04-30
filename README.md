@@ -119,4 +119,16 @@ SELECT * FROM User LIMIT 5 OFFSET 25;
 
 > import 'font-awesome/css/font-awesome.min.css' at file index in reactjs;
 
+---
+
+## Config JWT at Server Nodejs
+
+> `npm i --save-exact jsonwebtoken@8.5.1`
+
+> `npm i --save-exact cookie-parser@1.4.6`
+
+> và để đọc được cookie gửi lên server cần cài thêm thư viện cookie-parser
+
+> `npm i --save-exact react-loader-spinner@5.1.0`
+
 ## [How to write readme file ?](https://ihoctot.com/cach-viet-readme-md)

@@ -67,6 +67,7 @@ const Users = () => {
         setIsShowModalUser(true); //🔥 Open modal user
     };
     const handleRefresh = async () => {
+        setListUsers([]);
         await fetchUsers();
     };
     return (
@@ -84,7 +85,7 @@ const Users = () => {
                             >
                                 <span>
                                     <i
-                                        class="fa fa-refresh"
+                                        className="fa fa-refresh"
                                         aria-hidden="true"
                                     ></i>
                                 </span>
@@ -96,7 +97,7 @@ const Users = () => {
                             >
                                 <span>
                                     <i
-                                        class="fa fa-plus"
+                                        className="fa fa-plus"
                                         aria-hidden="true"
                                     ></i>
                                 </span>
@@ -164,7 +165,7 @@ const Users = () => {
                                                             }
                                                         >
                                                             <i
-                                                                class="fa fa-trash-o delete-icon"
+                                                                className="fa fa-trash-o delete-icon"
                                                                 aria-hidden="true"
                                                             ></i>
                                                         </button>
