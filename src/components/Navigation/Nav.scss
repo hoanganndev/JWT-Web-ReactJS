@@ -18,4 +18,45 @@
     color: white;
   }
 }
+.nav-header{
+  .nav-brand-name{
+    color: #893838 !important;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  #responsive-navbar-nav{
+    .navbar-left{
+      a{
+        font-size: 18px;
+        &:hover{
+          color: #e6d2db!important;
+        }
+      }
+      a.active{
+        color:#db3131 !important;
+        font-weight: 600;
+      }
+    }
+    .navbar-right{
+      font-size: 18px;
+      .nav{
+        &-user{
+          text-transform:capitalize;
+          font-weight: 500;
+          color:#b83333 !important
+        }
+        &-login{
+          font-weight: 500;
+          color: #b83333 !important;
+        }
+      }
+     
+      .configs{
+        font-size: 20px;
+      }
+    }
+  }
+ 
+ 
+}
 

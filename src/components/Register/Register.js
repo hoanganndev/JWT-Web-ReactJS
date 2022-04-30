@@ -191,7 +191,7 @@ const Register = () => {
                             />
                         </div>
                         <button
-                            className="btn btn-primary py-2 register"
+                            className="btn btn-register py-2 register"
                             onClick={() => handleRegister()}
                         >
                             Register
@@ -199,7 +199,7 @@ const Register = () => {
                         <hr />
                         <div className="text-center">
                             <button
-                                className="btn btn-outline-success create-account"
+                                className="btn create-account"
                                 onClick={() => handleLogin()}
                             >
                                 Already've an account. Login

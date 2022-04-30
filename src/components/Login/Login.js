@@ -82,7 +82,7 @@ const Login = () => {
                         <div className="form-group">
                             <label
                                 htmlFor="input-email-phone"
-                                className="form-label"
+                                className="form-label label"
                             >
                                 Email or Phone:
                             </label>
@@ -102,7 +102,7 @@ const Login = () => {
                         <div className="form-group">
                             <label
                                 htmlFor="input-password"
-                                className="form-label"
+                                className="form-label label"
                             >
                                 Password:
                             </label>
@@ -122,7 +122,7 @@ const Login = () => {
                         </div>
 
                         <button
-                            className="btn btn-primary py-2 login"
+                            className="btn btn-login py-2 login"
                             onClick={() => handleLogin()}
                         >
                             Login
@@ -135,7 +135,7 @@ const Login = () => {
                         <hr />
                         <div className="text-center">
                             <button
-                                className="btn btn-outline-success create-account"
+                                className="btn  create-account"
                                 onClick={() => handleCreateNewAccount()}
                             >
                                 Create New Account
