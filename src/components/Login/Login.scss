@@ -1,27 +1,21 @@
 
 .login-container{
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: #cadfff;
-  background-image: url('https://images.unsplash.com/photo-1590212151175-e58edd96185b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80');
-  background-repeat: no-repeat; 
-  background-position: center center;  
-  background-size: cover;
-  background-attachment: fixed;
   .content-left{
     padding-top: 55px;
     .brand{
       h1{
-        color: #e1edff;
+        color: #fff;
         font-family: math;
         font-size: 60px;
         letter-spacing: 5px;
       }
       p{
         letter-spacing: 5px;
-        color: #ffffff;
+        color: #85cfc4;
         font-size: 23px;
-
       }
     }
     .detail{
@@ -90,6 +84,22 @@
     }
   }
 
+}
+.login-container::after{
+  content: '';
+  background-color: #cadfff;
+  background-image: url('https://images.unsplash.com/photo-1590212151175-e58edd96185b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80');
+  background-repeat: no-repeat; 
+  background-position: center center;  
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 .form-lable{
   font-family: system-ui;

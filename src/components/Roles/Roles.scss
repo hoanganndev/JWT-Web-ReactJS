@@ -1,0 +1,41 @@
+.role-container{
+  .title-role{
+    font-family: emoji;
+    font-weight: 600;
+  }
+  .actions{
+    padding-top:18px;
+    i{
+      font-size: 25px;
+      cursor: pointer;
+    }
+   .add{
+      color: green;
+   }
+   .delete{
+      color: red;
+   }
+   
+  }
+  .tabel-role {
+   h3{
+    font-family: emoji;
+   }
+    .delete,.edit{
+      cursor: pointer;
+      color:red;
+      font-size: 20px;
+    }
+    .delete{
+     
+      color:rgb(165, 0, 0)
+     
+    }
+    .edit{
+      color: rgb(226, 127, 14);
+      .save{
+        color: green;
+      }
+    }
+  }
+}

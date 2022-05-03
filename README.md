@@ -131,4 +131,8 @@ SELECT * FROM User LIMIT 5 OFFSET 25;
 
 > `npm i --save-exact react-loader-spinner@5.1.0`
 
+## Config uuid to auto generate id
+
+> `npm i --save-exact uuid@8.3.2`
+
 ## [How to write readme file ?](https://ihoctot.com/cach-viet-readme-md)
