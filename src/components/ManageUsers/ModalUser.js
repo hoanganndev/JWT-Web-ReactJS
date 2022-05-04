@@ -31,7 +31,7 @@ const ModalUser = props => {
     const [userData, setUserData] = useState(defautlUserData);
     const [validInputs, setValidInputs] = useState(defaultValidInputs);
     useEffect(() => {
-        getGorup();
+        getGroups();
     }, []);
     useEffect(() => {
         if (action === "UPDATE") {
@@ -48,7 +48,7 @@ const ModalUser = props => {
             }
         }
     }, [action]);
-    const getGorup = async () => {
+    const getGroups = async () => {
         try {
             let res = await fetchGroup();
             if (res && res.errorCode === 0) {

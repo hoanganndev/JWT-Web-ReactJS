@@ -50,6 +50,12 @@ const NavHeader = () => {
                                     </NavLink>
                                     <NavLink
                                         className="nav-link"
+                                        to="/group-role"
+                                    >
+                                        Group-Role
+                                    </NavLink>
+                                    <NavLink
+                                        className="nav-link"
                                         to="/projects"
                                     >
                                         Projects
