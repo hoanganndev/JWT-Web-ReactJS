@@ -13,4 +13,17 @@ const updateCurrentRole = roleData => {
         ...roleData,
     });
 };
-export { createRoles, fetchAllRoles, deteteRole, updateCurrentRole };
+const fetchRolesByGroup = groupId => {
+    return axiosClient.get(`/api/v1/role/by-group/${groupId}`);
+};
+const assignRolesToGroup = data => {
+    return axiosClient.post("/api/v1/role/assign-to-group", { data });
+};
+export {
+    createRoles,
+    fetchAllRoles,
+    deteteRole,
+    updateCurrentRole,
+    fetchRolesByGroup,
+    assignRolesToGroup,
+};

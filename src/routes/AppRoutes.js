@@ -6,6 +6,7 @@ import Roles from "../components/Roles/Roles";
 import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import Register from "../components/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import GroupRole from "../components/GroupRole/GroupRole";
 const AppRoutes = () => {
     //! Face component Projects
     const Projects = () => {
@@ -17,6 +18,7 @@ const AppRoutes = () => {
                 <PrivateRoutes path="/users" component={Users} />
                 <PrivateRoutes path="/projects" component={Projects} />
                 <PrivateRoutes path="/roles" component={Roles} />
+                <PrivateRoutes path="/group-role" component={GroupRole} />
                 <Route path="/login">
                     <Login />
                 </Route>

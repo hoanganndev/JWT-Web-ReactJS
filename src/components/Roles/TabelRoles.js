@@ -51,7 +51,6 @@ const TabelRoles = forwardRef((props, ref) => {
     };
     const isEmptyObject = Object.keys(editRole).length === 0;
     const handleOnchangeEditRole = (key, value) => {
-        console.log(">>> check");
         let _editRole = _.cloneDeep(editRole);
         _editRole[key] = value;
         setEditRole(_editRole);
