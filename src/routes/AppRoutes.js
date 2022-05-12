@@ -7,10 +7,18 @@ import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
 import Register from "../components/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import GroupRole from "../components/GroupRole/GroupRole";
+import HomePage from "../components/HomePage/HomePage";
 const AppRoutes = () => {
-    //! Face component Projects
     const Projects = () => {
-        return <span>Projects</span>;
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 text-center mt-3">
+                        <span>This space will display projects</span>
+                    </div>
+                </div>
+            </div>
+        );
     };
     return (
         <>
@@ -26,7 +34,7 @@ const AppRoutes = () => {
                     <Register />
                 </Route>
                 <Route path="/" exact>
-                    home
+                    <HomePage />
                 </Route>
                 <Route path="*">
                     <NotFoundPage />

@@ -6,6 +6,7 @@ import { NavLink, Link } from "react-router-dom";
 import "./Nav.scss";
 import { logoutUser } from "../../services/userServices";
 import { toast } from "react-toastify";
+import logo from "./marcus.png";
 const NavHeader = () => {
     let location = useLocation();
     let history = useHistory();
@@ -33,7 +34,11 @@ const NavHeader = () => {
                     >
                         <Container>
                             <NavLink className="nav-link nav-brand-name" to="/">
-                                Admin-Dashboard
+                                <img
+                                    className="image"
+                                    src={logo}
+                                    alt="marcus dev"
+                                />
                             </NavLink>
                             <Navbar.Brand href="/"></Navbar.Brand>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -94,7 +99,7 @@ const NavHeader = () => {
                                                 >
                                                     Log Out{" "}
                                                     <i
-                                                        className="fa fa-sign-out ms-5"
+                                                        className="fa fa-sign-out ms-2"
                                                         aria-hidden="true"
                                                     ></i>
                                                 </NavDropdown.Item>

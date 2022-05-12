@@ -138,24 +138,31 @@ const Roles = () => {
                                                 }
                                             />
                                         </div>
-                                        <div className="col-2 mt-4 actions">
-                                            <i
-                                                title="Add new input role"
-                                                className="fa fa-angle-double-down add"
-                                                aria-hidden="true"
-                                                onClick={() =>
-                                                    handleAddNewInput()
-                                                }
-                                            ></i>
-                                            {index >= 1 && (
+                                        <div className="col-2 mt-4 actions d-flex ">
+                                            <span>
                                                 <i
-                                                    title="Remove a input role"
-                                                    className="fa fa-minus-square-o delete ms-3"
+                                                    title="Add new input role"
+                                                    className="fa fa-angle-double-down add"
                                                     aria-hidden="true"
                                                     onClick={() =>
-                                                        handleDeleteInput(key)
+                                                        handleAddNewInput()
                                                     }
                                                 ></i>
+                                            </span>
+                                            {index >= 1 && (
+                                                <span>
+                                                    {" "}
+                                                    <i
+                                                        title="Remove a input role"
+                                                        className="fa fa-minus-square-o delete ms-2 ms-md-3"
+                                                        aria-hidden="true"
+                                                        onClick={() =>
+                                                            handleDeleteInput(
+                                                                key
+                                                            )
+                                                        }
+                                                    ></i>
+                                                </span>
                                             )}
                                         </div>
                                     </div>
@@ -174,7 +181,9 @@ const Roles = () => {
                 <hr />
                 <div className="tabel-role mt-3">
                     <h3>List current roles:</h3>
-                    <TabelRoles ref={childRef} />
+                    <div className="table-responsive">
+                        <TabelRoles ref={childRef} />
+                    </div>
                 </div>
             </div>
         </div>

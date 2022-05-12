@@ -2,6 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 const axiosClient = axios.create({
     baseURL: "http://localhost:8080/",
+    //baseURL: process.env.REACT_APP_BACKEND_URL,
     headers: {
         "Content-Type": "application/json",
     },
@@ -38,6 +39,14 @@ axiosClient.interceptors.response.use(
         switch (status) {
             //! authentication (token related issues)
             case 401: {
+                //! when the path is one of these below, no message is displayed
+                if (
+                    window.location.pathname !== "/" &&
+                    window.location.pathname !== "/login" &&
+                    window.location.pathname !== "/register"
+                ) {
+                    toast.error(error.response.data.errorMessage);
+                }
                 toast.error(error.response.data.errorMessage);
                 return error.response.data;
             }

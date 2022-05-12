@@ -260,7 +260,7 @@ const ModalUser = props => {
                                 }
                             />
                         </div>
-                        <div className="col-12 col-sm-6 form-group">
+                        <div className="col-6 col-sm-6 form-group">
                             <label htmlFor="input-gender">Gender :</label>
                             <select
                                 className="form-select"
@@ -277,7 +277,7 @@ const ModalUser = props => {
                                 <option value="Other">Other</option>
                             </select>
                         </div>
-                        <div className="col-12 col-sm-6 form-group">
+                        <div className="col-6 col-sm-6 form-group">
                             <label htmlFor="input-group">
                                 Group ( <span className="red-point">*</span> ) :
                             </label>

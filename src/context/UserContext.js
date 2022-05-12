@@ -35,16 +35,7 @@ function UserProvider({ children }) {
         }
     };
     useEffect(() => {
-        //! check when path === home or login => never get account
-        if (
-            window.location.pathname !== "/" &&
-            window.location.pathname !== "/login"
-        ) {
-            fetchUser();
-        } else {
-            //! when path=/login => fetchUser don't run =>  isLoading: true
-            setUser({ ...user, isLoading: false });
-        }
+        fetchUser();
     }, []);
     return (
         <UserContext.Provider value={{ user, loginContext, logoutContext }}>
