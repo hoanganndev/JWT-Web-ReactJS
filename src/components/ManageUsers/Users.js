@@ -105,7 +105,7 @@ const Users = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="user-body">
+                    <div className="user-body table-responsive">
                         <table className="table table-hover table-bordered">
                             <thead>
                                 <tr>
@@ -141,34 +141,41 @@ const Users = () => {
                                                             : ""}
                                                     </td>
                                                     <td className="text-center">
-                                                        <button
-                                                            title="Edit user"
-                                                            className="btn btn-outline-warning"
-                                                            onClick={() =>
-                                                                handleEditUser(
-                                                                    item
-                                                                )
-                                                            }
+                                                        <div
+                                                            className="btn-group"
+                                                            role="group"
                                                         >
-                                                            <i
-                                                                className="fa fa-pencil edit-icon"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <button
-                                                            title="Delete user"
-                                                            className="btn btn-outline-danger ms-4"
-                                                            onClick={() =>
-                                                                handleDeleteUser(
-                                                                    item
-                                                                )
-                                                            }
-                                                        >
-                                                            <i
-                                                                className="fa fa-trash-o delete-icon"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
+                                                            <button
+                                                                type="button"
+                                                                title="Edit user"
+                                                                className="btn btn-outline-warning"
+                                                                onClick={() =>
+                                                                    handleEditUser(
+                                                                        item
+                                                                    )
+                                                                }
+                                                            >
+                                                                <i
+                                                                    className="fa fa-pencil edit-icon"
+                                                                    aria-hidden="true"
+                                                                ></i>
+                                                            </button>
+                                                            <button
+                                                                type="button"
+                                                                title="Delete user"
+                                                                className="btn btn-outline-danger ms-4"
+                                                                onClick={() =>
+                                                                    handleDeleteUser(
+                                                                        item
+                                                                    )
+                                                                }
+                                                            >
+                                                                <i
+                                                                    className="fa fa-trash-o delete-icon"
+                                                                    aria-hidden="true"
+                                                                ></i>
+                                                            </button>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             );

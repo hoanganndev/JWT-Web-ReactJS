@@ -135,4 +135,7 @@ SELECT * FROM User LIMIT 5 OFFSET 25;
 
 > `npm i --save-exact uuid@8.3.2`
 
+## Custom scrollbars
+> `npm i --save-exact react-custom-scrollbars@4.2.1`
+
 ## [How to write readme file ?](https://ihoctot.com/cach-viet-readme-md)

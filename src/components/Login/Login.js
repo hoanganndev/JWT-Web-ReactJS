@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { UserContext } from "../../context/UserContext";
 import { loginUser } from "../../services/userServices";
 import "./Login.scss";
 const Login = () => {
-    const { loginContext } = useContext(UserContext);
+    const { user, loginContext } = useContext(UserContext);
     const [valueLogin, setValueLogin] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory();
@@ -60,7 +60,11 @@ const Login = () => {
             handleLogin();
         }
     };
-
+    useEffect(() => {
+        if (user && user.isAuthenticated === true) {
+            history.push("/");
+        }
+    }, [user]);
     return (
         <div className="login-container">
             <div className="container">
@@ -140,6 +144,17 @@ const Login = () => {
                             >
                                 Create New Account
                             </button>
+                            <div className="return-home mt-3">
+                                <Link to="/">
+                                    <i
+                                        className="fa fa-chevron-circle-left"
+                                        aria-hidden="true"
+                                    ></i>
+                                    <span className="ms-2">
+                                        Return to home page ?
+                                    </span>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,60 @@
+
+.homepage-container{
+
+
+  .project-info {
+    letter-spacing: 6px;
+    line-height: 50px;
+    font-family: 'Bitter', serif;
+    text-align: center;
+    .text1{
+      color: #ee6972;
+      font-size: 33px;}
+    .text2{
+      color: #0f3038;
+      font-size: 28px;}
+    .text3{
+      color: #0f3038;
+      font-size: 20px;}
+  }
+  .my-info {
+    letter-spacing: 3px;
+    line-height: 50px;
+    font-family: 'Bitter', serif;
+    text-align: center;
+    .text1{
+      color: #ee6972;
+      font-size: 30px;
+      span{
+        padding: 10px;
+      }
+      .facebook{
+        .fa-facebook{
+          color: #4643f5;
+        }
+      }
+      .github{
+        .fa-github{
+          font-size: 33px;
+          color: #0f0f0f ;
+        }
+      
+      }
+      
+    
+    }
+      
+    .text2{
+      color: #0f0f0f;
+      font-size: 20px;
+    .email{
+      color:#e9404b
+    }
+    }
+  
+  }
+ 
+  
+  
+  
+}

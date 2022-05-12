@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import "./GroupRole.scss";
+import _ from "lodash";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { fetchGroup } from "../../services/userServices";
 import {
+    assignRolesToGroup,
     fetchAllRoles,
     fetchRolesByGroup,
-    assignRolesToGroup,
 } from "../../services/roleService";
-import _, { isEmpty } from "lodash";
+import { fetchGroup } from "../../services/userServices";
+import "./GroupRole.scss";
 const GroupRole = () => {
     const [userGroups, setUserGroups] = useState([]);
     const [listRoles, setListRoles] = useState([]);
@@ -99,19 +99,22 @@ const GroupRole = () => {
             toast.error(res.errorMessage);
         }
     };
+
     return (
         <div className="group-role-container">
             <div className="container">
                 <div className="mt-2">
                     <h3>Group role</h3>
                     <div className="assign-group-role">
-                        <div className="col-12 col-sm-6 form-group">
+                        <div className="col-6 col-sm-6  form-group ">
                             <label htmlFor="input-gender ">
                                 Select Group ({" "}
                                 <span className="red-point">*</span> ) :
                             </label>
+
                             <select
-                                className="form-select mt-2"
+                                className="form-select form-select-sm"
+                                aria-label=".form-select-sm example"
                                 id="input-group"
                                 onChange={e =>
                                     hanleOnchangeGroup(e.target.value)

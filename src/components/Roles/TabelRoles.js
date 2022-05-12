@@ -153,40 +153,42 @@ const TabelRoles = forwardRef((props, ref) => {
                                             </>
                                         )}
 
-                                        <td className="text-center">
-                                            <span
-                                                title={
-                                                    isEmptyObject === false
-                                                        ? "Save"
-                                                        : "Edit"
-                                                }
-                                                className="edit"
-                                                onClick={() =>
-                                                    handleEditRole(role)
-                                                }
-                                            >
-                                                {isEmptyObject === false &&
-                                                editRole.id === role.id ? (
-                                                    <i
-                                                        className="fa fa-floppy-o save"
-                                                        aria-hidden="true"
-                                                    ></i>
-                                                ) : (
-                                                    <i
-                                                        className="fa fa-pencil"
-                                                        aria-hidden="true"
-                                                    ></i>
-                                                )}
-                                            </span>
-                                            <span
-                                                title="Delete"
-                                                className="delete ms-4"
-                                                onClick={() =>
-                                                    handleDeleteRole(role)
-                                                }
-                                            >
-                                                <i className="fa fa-trash-o"></i>
-                                            </span>
+                                        <td>
+                                            <div className="d-flex justify-content-center">
+                                                <span
+                                                    title={
+                                                        isEmptyObject === false
+                                                            ? "Save"
+                                                            : "Edit"
+                                                    }
+                                                    className="edit"
+                                                    onClick={() =>
+                                                        handleEditRole(role)
+                                                    }
+                                                >
+                                                    {isEmptyObject === false &&
+                                                    editRole.id === role.id ? (
+                                                        <i
+                                                            className="fa fa-floppy-o save"
+                                                            aria-hidden="true"
+                                                        ></i>
+                                                    ) : (
+                                                        <i
+                                                            className="fa fa-pencil"
+                                                            aria-hidden="true"
+                                                        ></i>
+                                                    )}
+                                                </span>
+                                                <span
+                                                    title="Delete"
+                                                    className="delete ms-4"
+                                                    onClick={() =>
+                                                        handleDeleteRole(role)
+                                                    }
+                                                >
+                                                    <i className="fa fa-trash-o"></i>
+                                                </span>
+                                            </div>
                                         </td>
                                     </tr>
                                 );
